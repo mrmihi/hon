@@ -2,13 +2,13 @@
   <div class="col-xs-10">
     <app-shopping-edit></app-shopping-edit>
     <hr>
-    <ul class="list-group">
+    <ul class="flex flex-row flex-wrap justify-content-center">
       <a
-        class="list-group-item"
+        class=""
         style="cursor: pointer"
-        *ngFor="let ingredient of ingredients"
+        *ngFor="let book of books"
       >
-        {{ ingredient.name }} ({{ ingredient.amount }})
+        {{ book.name }} ({{ book.isbn }})
       </a>
     </ul>
   </div>
