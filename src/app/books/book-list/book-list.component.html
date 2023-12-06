@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p-button>New Book</p-button>
+  </div>
+</div>
+<hr>
+<div class="">
+  <div class="">
+    <div
+      class="list-group-item clearfix"
+      *ngFor="let book of books">
+      <p-card header="{{book.name}}" class="m-1">
+        <p class="m-0">
+          {{book.description}}
+          <img
+            [src]="book.imagePath"
+            alt="{{ book.name }}"
+            class="img-responsive"
+            style="max-height: 50px;">
+        </p>
+      </p-card>
+    </div>
+    <app-book-item></app-book-item>
+  </div>
+</div>
+
