@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "eslint \"src/**/*.js\""
+    "lint": "eslint .",
+    "format": "prettier --write --cache \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
   "private": true,
   "dependencies": {
@@ -27,9 +28,13 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-eslint/eslint-plugin": "^17.1.1",
+    "@angular-eslint/eslint-plugin-template": "^17.1.1",
+    "@angular-eslint/template-parser": "^17.1.1",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.55.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -37,6 +42,12 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.1.0",
     "typescript": "~5.2.2"
-  }
+  },
+  "eslintIgnore": [
+    "src/assets/snippets/**/*.js",
+    "webpack.config.js",
+    "webpack-local.config.js"
+  ]
 }
