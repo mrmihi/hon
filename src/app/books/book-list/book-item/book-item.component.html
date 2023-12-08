@@ -1,3 +1,14 @@
-<p>
-  book-item works!
-</p>
+<div
+  class="list-group-item clearfix"
+  (click) = "onSelect()">
+  <p-card header="{{book.name}}" class="m-1">
+    <p class="m-0">
+      {{book.description}}
+      <img
+        [src]="book.imagePath"
+        alt="{{ book.name }}"
+        class="img-responsive"
+        style="max-height: 50px;">
+    </p>
+  </p-card>
+</div>

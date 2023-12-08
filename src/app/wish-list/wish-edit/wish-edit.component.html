@@ -3,15 +3,25 @@
     <form>
       <div class="flex flex-row flex-wrap justify-content-center">
         <div class="m-1">
-          <input type="text"  placeholder="Name" pInputText [(ngModel)]="wishItems" />
+          <input
+            type="text"
+            placeholder="Name"
+            pInputText [(ngModel)]="wishItems"
+            #wishItemName
+          />
         </div>
         <div class="m-1">
-          <input type="text"  placeholder="Amount" pInputText [(ngModel)]="wishItems" />
+          <input
+            type="text"
+            placeholder="isbn"
+            pInputText [(ngModel)]="wishItems"
+            #wishItemisbn
+          />
         </div>
       </div>
       <div class="flex flex-row flex-wrap justify-content-center">
         <div class="m-1">
-          <p-button class="m-1">Add</p-button>
+          <p-button class="m-1" (click)="addWishItem()">Add</p-button>
           <p-button class="m-1">Delete</p-button>
           <p-button class="m-1">Clear</p-button>
         </div>

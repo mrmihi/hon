@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { DropdownModule } from 'primeng/dropdown';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {Book} from "../../shared/book.model";
 
 interface Options {
   name: string;
@@ -14,7 +15,7 @@ interface Options {
   imports: [DropdownModule, CommonModule, FormsModule]
 })
 export class BookDetailComponent implements OnInit {
-
+  @Input() selectedBook: Book | undefined;
   constructor() { }
 
   options: Options[] | undefined;

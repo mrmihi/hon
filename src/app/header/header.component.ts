@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   standalone: true,
@@ -9,12 +9,18 @@ import { MenuItem } from 'primeng/api';
   imports: [ MenubarModule ]
 })
 export class HeaderComponent implements OnInit {
+  @Output() selectedRoute = new EventEmitter<string>();
   items: MenuItem[] | undefined;
+
+  onSelect(route: string) {
+    console.log('onSelect: ' + route);
+    this.selectedRoute.emit(route);
+  }
 
   ngOnInit() {
     this.items = [
       {
-        label: 'File',
+        label: 'Books',
         icon: 'pi pi-fw pi-file',
         items: [
           {
@@ -28,8 +34,9 @@ export class HeaderComponent implements OnInit {
             ]
           },
           {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
+            label: 'View',
+            icon: 'pi pi-fw pi-trash',
+            command: () => this.onSelect('books'),
           },
           {
             separator: true
@@ -41,23 +48,24 @@ export class HeaderComponent implements OnInit {
         ]
       },
       {
-        label: 'Edit',
+        label: 'Wish List',
         icon: 'pi pi-fw pi-pencil',
         items: [
           {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left'
+            label: 'View',
+            icon: 'pi pi-fw pi-align-left',
+            command: () => this.onSelect('wish-list'),
           },
           {
-            label: 'Right',
+            label: 'Delete',
             icon: 'pi pi-fw pi-align-right'
           },
           {
-            label: 'Center',
+            label: 'Search',
             icon: 'pi pi-fw pi-align-center'
           },
           {
-            label: 'Justify',
+            label: 'Export',
             icon: 'pi pi-fw pi-align-justify'
           }
         ]
