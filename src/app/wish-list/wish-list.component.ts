@@ -4,6 +4,7 @@ import { Wish } from '../shared/wish.model';
 import { WishEditComponent } from './wish-edit/wish-edit.component';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
+import {wishListService} from "./wishList.service";
 
 @Component({
   standalone: true,
@@ -13,16 +14,12 @@ import { CardModule } from 'primeng/card';
   styleUrls: ['./wish-list.component.css'],
 })
 export class WishListComponent implements OnInit {
-  wishes: Wish[] = [
-    new Wish('Apples Are Tasty', 5),
-    new Wish('Tomatoes Rot', 10),
-  ];
+  wishes: Wish[] | undefined;
 
-  constructor() {}
+  constructor(private WishListService: wishListService) {}
 
-  ngOnInit() {}
-
-  addWishItem(wish: Wish) {
-    this.wishes.push(wish);
+  ngOnInit() {
+    this.wishes = this.WishListService.getWishList()
+    this.WishListService.wishesChanged.subscribe((wishes:Wish[])=>{this.wishes = wishes})
   }
 }

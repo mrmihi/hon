@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Book } from '../../../shared/book.model';
+import {bookService} from "../../book.service";
 
 @Component({
   standalone: true,
@@ -17,12 +18,12 @@ export class BookItemComponent implements OnInit {
     'This is simply a test',
     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
   );
-  @Output() bookSelected = new EventEmitter<void>();
+  constructor(private BookService: bookService) {}
   onSelect() {
-    console.log('child selected');
-    this.bookSelected.emit();
+    this.BookService.selectedBook.emit(this.book)
   }
-  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("TODO")
+  }
 }

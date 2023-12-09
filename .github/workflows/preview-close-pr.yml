@@ -5,7 +5,7 @@ on:
     types:
       - closed
     branches:
-      - development
+      - dev
 
 jobs:
   send-pr-number-to-clean:

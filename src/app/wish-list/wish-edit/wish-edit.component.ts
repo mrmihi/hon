@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { Wish } from '../../shared/wish.model';
+import {wishListService} from "../wishList.service";
 
 @Component({
   standalone: true,
@@ -23,15 +24,17 @@ export class WishEditComponent implements OnInit {
   @ViewChild('wishItemName') nameInput: ElementRef | undefined;
   @ViewChild('wishItemisbn') isbnInput: ElementRef | undefined;
   @Output() addWish = new EventEmitter<Wish>();
-  constructor() {}
+  constructor(private WishListService: wishListService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("TODO")
+  }
 
   addWishItem() {
     const wishItem = new Wish(
       this.nameInput?.nativeElement.value,
       this.isbnInput?.nativeElement.value,
     );
-    this.addWish.emit(wishItem);
+    this.WishListService.addWishList(wishItem);
   }
 }
