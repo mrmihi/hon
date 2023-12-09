@@ -7,7 +7,7 @@ on:
       - reopened
       - synchronize
     branches:
-      - development
+      - dev
 
 concurrency:
   group: preview-${{ github.ref }}
