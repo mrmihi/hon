@@ -1,6 +1,6 @@
 <div class="flex flex-row flex-wrap">
   <div class="w-4 m-4">
-    <app-book-list (onSelection)="selectedBookFromList = $event"></app-book-list>
+    <app-book-list></app-book-list>
   </div>
   <div class="w-4 m-4">
     <app-book-detail *ngIf="selectedBookFromList; else noBookPrompt"

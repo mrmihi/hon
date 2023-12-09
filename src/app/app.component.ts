@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { BookComponent } from './books/book.component';
 import { WishListComponent } from './wish-list/wish-list.component';
+import {wishListService} from "./wish-list/wishList.service";
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [wishListService]
 })
 export class AppComponent {
   title = 'hon';

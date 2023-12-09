@@ -8,8 +8,7 @@
   <div class="">
     <app-book-item
       *ngFor="let bookEl of books"
-      [book] = "bookEl"
-      (bookSelected)="onSelectedBook(bookEl)">
+      [book] = "bookEl">
     </app-book-item>
   </div>
 </div>
