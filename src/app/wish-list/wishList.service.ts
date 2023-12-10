@@ -1,8 +1,8 @@
 import {Wish} from "../shared/wish.model";
-import {EventEmitter} from "@angular/core";
+import {Subject} from "rxjs";
 
 export class wishListService {
-  wishesChanged = new EventEmitter<Wish[]>();
+  wishesChanged = new Subject<Wish[]>();
    private wishes: Wish[] = [
     new Wish('Apples Are Tasty', 5),
     new Wish('Tomatoes Rot', 10),
@@ -14,6 +14,6 @@ export class wishListService {
 
    addWishList(wish: Wish) {
      this.wishes.push(wish);
-     this.wishesChanged.emit(this.wishes.slice());
+     this.wishesChanged.next(this.wishes.slice());
    }
 }
