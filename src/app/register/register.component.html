@@ -1,0 +1,55 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="mx-auto mt-5" style="max-width: 400px">
+            <div class="container">
+                <h1 class="display-6">Register form</h1>
+                <hr />
+                <form #registerForm="ngForm" (onSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="user.user_name" required
+                            [(ngModel)]="user.user_name" name="user.user_name" placeholder="Enter your user name"
+                            #username="ngModel" />
+                        <small *ngIf="
+                registerForm.controls['user.user_name'].touched &&
+                username.invalid
+              " class="text-danger">Username is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="user.user_email" required
+                            [(ngModel)]="user.user_email" name="user.user_email" placeholder="Enter your user name"
+                            #username="ngModel" />
+                        <small *ngIf="
+                registerForm.controls['user.user_email'].touched &&
+                registerForm.controls['user.user_email'].invalid
+              " class="text-danger">Username is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="user.password" required
+                            [(ngModel)]="user.password" name="user.password" placeholder="Enter your password"
+                            #password="ngModel" />
+                        <small *ngIf="
+                registerForm.controls['user.password'].touched &&
+                registerForm.controls['user.password'].invalid
+              " class="text-danger">Password is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required
+                            [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Enter your password"
+                            #password="ngModel" />
+                        <small *ngIf="
+                registerForm.controls['confirmPassword'].touched &&
+                registerForm.controls['confirmPassword'].invalid
+              " class="text-danger">Password is required</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

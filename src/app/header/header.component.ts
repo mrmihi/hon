@@ -70,6 +70,22 @@ export class HeaderComponent implements OnInit {
           },
         ],
       },
+      {
+        label: 'Magic View',
+        icon: 'pi pi-fw pi-pencil',
+        items: [
+          {
+            label: 'Register',
+            icon: 'pi pi-fw pi-align-left',
+            command: () => this.onSelect('register'),
+          },
+          {
+            label: 'Login',
+            icon: 'pi pi-fw pi-align-right',
+          },
+
+        ],
+      },
     ];
   }
 }

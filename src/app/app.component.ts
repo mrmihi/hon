@@ -4,7 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { BookComponent } from './books/book.component';
 import { WishListComponent } from './wish-list/wish-list.component';
-import {wishListService} from "./wish-list/wishList.service";
+import { wishListService } from "./wish-list/wishList.service";
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import {wishListService} from "./wish-list/wishList.service";
     HeaderComponent,
     BookComponent,
     WishListComponent,
+    RegisterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
