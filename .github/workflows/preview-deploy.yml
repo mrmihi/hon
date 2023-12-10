@@ -22,3 +22,6 @@ jobs:
         uses: sliit-foss/actions/preview-deployments/deploy@main
         with:
           site_domain: hon.mrmihi.dev
+          build_dir: ./dist/hon/browser
+
+
